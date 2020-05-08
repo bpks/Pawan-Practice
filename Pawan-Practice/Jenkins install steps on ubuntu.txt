@@ -1,0 +1,188 @@
+Install java first 
+
+sudo apt-get update
+
+sudo apt-get install default-jdk
+
+Install Jenkins wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
+
+echo deb https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list
+
+sudo apt-get update
+
+sudo apt-get install jenkins
+
+sudo systemctl status jenkins
+
+sudo systemctl start jenkins 
+ 
+http://3.15.40.242:8080/  ( use public ip from aws and followed by 8080 in the browser -it will show path /var/lib/jenkins/secrets/initialAdminPassword)
+so do --->  sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+it will show password --->  720a9f66b2774b07adb960d7a57b949e
+
+enter the password in the browser and click continue it will show jenkin URL:
+
+http://54.80.133.214:8080/
+
+save and finish
+
+
+===================================================
+Enable port:So that jenkin can access server
+Security group:
+first SSH : 22 port
+then custom TCP Rule : 8080
+
+===============================================
+(Node/Slave/Agent->all same ) server: Debin/Redhat family
+Centos-> from amzon market place(connect with pulic ip in mobaxterm user: centos)once logged in follow steps:
+
+If you want to run jobs in node server:
+first install java on cent os: 
+
+sudo yum install java-1.8.0-openjdk-devel
+
+1.Create user in node server-(to authenticate the jenikin master server)--> sudo adduser pawan
+                                                                            sudo passwd pawan
+
+2.Modify(authentication permission) SSHD configuration---> sudo vi etc/ssh/sshd_config
+
+scroll -->go to --> change password authentication yes from no
+
+
+3.restart the service -SSHD--> sudo service sshd restart
+
+4.Give root permission to the user --> go to sshd file--> sudo vi /etc/sudoers
+
+scroll and see --> Allow root to run any commands anywhere
+
+root ALL=(ALL)   ALL  -->  copy this line click Y 2 times
+
+and  press P to paste in the below line and change user name to give permission INSERT:
+
+pawan ALL=(ALL)   ALL 
+
+ESC :wq!  for force save and exit
+
+5.check weather file is correpted or not --> sudo vi /etc/sudoers   if this opens then its not corrpeted.
+
+6. restart SSHD service: sudo service sshd restart
+
+after this go to jenkins master and launch it--> go to manage jenkins--> manage nodes--> create node 
+
+follow the steps fill Host details,Add credentials pawan/pawan, host key verification strategy->Non verify verification strategy.
+
+save and launch agent .. some time you get error then install java first.
+
+
+Our target is to pull code from github to jenkins node server:
+
+SO : install git in  node server:
+
+sudo yum install git
+git --version
+
+create jon in jenkins and configure
+give git repo url(SSH) in source code management
+restrict where this job can be run: Lable expression: agent1
+
+
+and run.. all the files will be fetched from github to jenkins
+
+All these can be build using maven/ant
+
+=============================================================
+
+JAVA ENVIRONMENT VARIABLE SETIIG
+
+
+$sudo vi etc/environment
+
+i-insert
+
+JAVA-HOME = "/usr/lib/jvm/java-8-openjdk-amd64"
+
+:wq!
+
+
+$echo $JAVA-HOME
+$sudo apt-get update
+sudo apt-get install openjdk-8*    ->>java install command
+
+
+
+===========================================
+Nexus Installation
+
+
+1) Install Java
+sudo apt-get update
+
+sudo apt-get install openjdk-8*
+
+2) Install Nexus
+
+Download nexus:
+
+copy link for linux/mac
+
+do 
+
+wget pastedownloadlink
+
+it downloads nexus and file format in-->
+ nexus-latest-bundle.tar.gz
+ 
+ UNTAR THE FILE:
+ 
+ tar -xvf nexus-latest-bundle.tar.gz
+ 
+ By default:
+ port number 8081
+ Login : admin
+ paswd: admin123
+
+
+
+
+
+========================================
+
+Ansible yml file example:
+
+https://github.com/ansible/ansible-examples/blob/master/tomcat-standalone/roles/tomcat/tasks/main.yml
+
+
+Launch EC2 server for ansible-Amazon Linux
+
+INSTALL ANSIBLE:
+1. install python
+ sudo -i to goto root folder starts with #
+ 
+ yum install python
+ 
+ 
+ ubuntu _ python is already installed
+ Amazon linux we need to install python
+ 
+ 2. (yum install ansible) will not work
+ sudo amazon-linux-extras install ansible2
+ ansible --version
+ 
+ 
+ now we need to authenticate from ansible to dev/UAT/Preprod servers
+ authentication 2 types: SSH key-based
+                         values based
+						 
+						 
+Launch 3 more servers - along with ansible , Dev ,UAT and Preprod
+ 
+ First connect to ansible server
+ next change name using---> hostname ansible
+                            exec bash
+							sudo -i
+do this so that server is busy -session will not close:	ping google.com 
+ 
+ 3. Now connect to DEV server( by doing bash here)
+ change name 
+ 

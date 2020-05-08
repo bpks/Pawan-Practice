@@ -1,0 +1,100 @@
+video notes
+
+30.00
+
+public to Private server reaching/pinging using
+How to connect to private servers?
+
+ping public to  private server - it will ping
+
+Now connect:from public terminal do
+
+ssh ec2-user@private server ip
+
+it will ask key ( now copy the key)
+
+nano mykey.pem   ( anyname.pem)
+
+now select your pemkey copy
+
+cat mykey (copy all the key)
+
+now do
+
+ssh -i mykey.pem ec2-user@private ip
+unprotected key file
+
+do ll
+make 
+chmod 400 mykey.pem ( rw for root)
+
+
+
+
+How to make private severs reach internet:
+
+sudo su-  ( switch user to root)
+ssh -i mykey.pem 
+
+NATGATEWAY
+
+
+attach natgateway to public subnet
+add elastic ip
+
+add route table to private subnet(0.0.0.0 -Natgateway)
+
+
+S3 : 50:50 mins
+
+
+curl s3URL
+
+wget filename
+
+
+ll
+rm -rf terraform
+
+
+VPC ENDPOINTS (TO CONNECT S3 TO EC2 INTERNALLLY TO AVOID NATGATEWAY OVER INTERNET)
+
+
+
+TO CREATE ENDPOINTS 
+
+goto aws cli( to goto cli) do following
+aws configure 
+
+it will ask accesskey and secretkey
+
+FIRST WE NEED IAM USER
+adduser -test user
+programatic access
+s3 full access
+
+then it will show accesskey and secret key ( copythem once close you will not get back)
+
+now give 
+aws accesskey: aka23r3r222
+aws secret access:32rr2fsf3r
+default regionname:us-east-1
+default output format:json
+
+
+
+now do
+
+aws s3 ls  ( list all s3 buckets)
+
+gateway endpoint vs Interface endpoint
+
+gateway endpoint:Adds a routing entr to routig table
+Interface endpoint: It will create network interface
+
+
+aws ec2 describe-instances
+
+
+
+

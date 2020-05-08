@@ -1,0 +1,38 @@
+
+For ubuntu machines use apt
+
+#!/bin/bash
+apt update
+apt install software-properties-common -y
+apt-add-repository --yes --update ppa:ansible/ansible
+apt update
+apt install ansible -y
+apt install nginx -y
+apt install python-apt -y
+apt install git -y
+apt install stress -y
+
+#!/bin/bash
+git clone https://github.com/mavrick202/ansibletemplatetesting.git /myrepo
+ansible-playbook /myrepo/playbook.yaml
+
+
+For Linux machines use yum
+
+#!/bin/bash
+yum update -y
+yum install nginx -y
+yum service start nginx
+
+
+after launching the putty connect ubuntu
+then do
+
+sudo su -
+
+stress
+It will show connected
+
+next:(server will boot , service will not start)if we dont execute belwo command
+
+systemctl enable nginx
