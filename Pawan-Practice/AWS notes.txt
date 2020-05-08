@@ -73,4 +73,7 @@ to get vpc cider blocks
 for vpc in vpcs
 print(vpcs['vpcId'],'-->',vpc['CidrBlock'])
 
+================================
+created dynamodb next create Lamda ( could watch alarms)
 
+IAM attach AmazonDynamoDBFullAccess policy
