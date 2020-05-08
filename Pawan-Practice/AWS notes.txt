@@ -61,3 +61,16 @@ mobile,web,gaming,adtecv, IOT etc..
 
 Why they call it as serverless- it is managed by vendor not you.
 Serverless application: Internet --trafic-->AWS-API-GATEWAY(SendsData&Receive data-but cant wrtie to dynamoDB)-so we need->AWS LAMBDA--it will execute only scripts--> DynamoDB
+
+import boto3
+conn = boto3.client('ec2')
+
+vpcs = conn.describe_vpcs()
+vpcs = conn.describe_vpcs().get('vpcs',[])
+
+to get vpc cider blocks
+
+for vpc in vpcs
+print(vpcs['vpcId'],'-->',vpc['CidrBlock'])
+
+
