@@ -74,10 +74,41 @@ for vpc in vpcs
 print(vpcs['vpcId'],'-->',vpc['CidrBlock'])
 
 ================================
-created dynamodb next create Lamda ( could watch alarms)
+1.Created dynamodb 
+2.Create Lamda for pushing data to bookstore table ( also eg: could watch alarms for shuting down servers etc..)
 
-IAM attach AmazonDynamoDBFullAccess policy
+use this code in lambda to push code:
 
-Amazon API Gateway- Mostly used by developers..
+-----------------------------USE PUT----------------------------
+{
+  "operation": "create",
+  "payload":{
+  	"TableName":"bookstore",
+  	"Item":{
+      	"bookid:10,
+      	"author":"Robert K",
+      	"bookname":"Rich Dad & Poor Dad",
+      	"Location":"USA",
+    	"State":"Hawaii"
+  	}
+  }
+}
+ -----------------USE POST-----------------------------
+{
+  "operation": "read",
+  "payload":{
+  	"TableName":"bookstore",
+  	"Key":{
+      	"bookid":1
+  	}
+  }
+}
+
+3.IAM attach AmazonDynamoDBFullAccess policy
+
+4.Amazon API Gateway- Mostly used by developers..
+
+Select REST API --> lambda,Aws services--> build
+
 
 
