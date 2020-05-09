@@ -60,6 +60,9 @@ https://www.youtube.com/watch?v=krpzxDAlOdA
 mobile,web,gaming,adtecv, IOT etc..
 
 Why they call it as serverless- it is managed by vendor not you.
+
+API GW < ------ AWS LAMBD <------- DynamoDB
+
 Serverless application: Internet --trafic-->AWS-API-GATEWAY(SendsData&Receive data-but cant wrtie to dynamoDB)-so we need->AWS LAMBDA--it will execute only scripts--> DynamoDB
 
 import boto3
@@ -110,5 +113,6 @@ use this code in lambda to push code:
 
 Select REST API --> lambda,Aws services--> build
 
+Create Rest API--> Action - Create Resources->
 
 
