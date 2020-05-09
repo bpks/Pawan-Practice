@@ -120,3 +120,7 @@ Create PUT and POST integrate with lamda
 
 Test the connection once done.
 Deploye API- By selecting root from ACTIONS-NewStage
+
+
+DAY 23
+
