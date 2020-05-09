@@ -88,7 +88,7 @@ use this code in lambda to push code:
   "payload":{
   	"TableName":"bookstore",
   	"Item":{
-      	"bookid":"10",
+      	"bookid":10,
       	"author":"Robert K",
       	"bookname":"Rich Dad & Poor Dad",
       	"Location":"USA",
@@ -102,12 +102,12 @@ use this code in lambda to push code:
   "payload":{
   	"TableName":"bookstore",
   	"Key":{
-      	"bookid":"1"
+      	"bookid":1
   	}
   }
 }
 
-3.IAM attach AmazonDynamoDBFullAccess policy
+3.IAM attach AmazonDynamoDBFullAccess policy( Create function-->Blue print-->simple-mobile-backend
 
 4.Amazon API Gateway- Mostly used by developers..
 
