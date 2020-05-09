@@ -88,7 +88,7 @@ use this code in lambda to push code:
   "payload":{
   	"TableName":"bookstore",
   	"Item":{
-      	"bookid:10,
+      	"bookid":"10",
       	"author":"Robert K",
       	"bookname":"Rich Dad & Poor Dad",
       	"Location":"USA",
@@ -114,5 +114,7 @@ use this code in lambda to push code:
 Select REST API --> lambda,Aws services--> build
 
 Create Rest API--> Action - Create Resources->
+
+Create PUT and POST integrate with lamda
 
 
