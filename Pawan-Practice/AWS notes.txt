@@ -124,3 +124,13 @@ Deploye API- By selecting root from ACTIONS-NewStage
 
 DAY 23
 
+DAY 25
+
+CloudWatch Alarams:
+
+SNS create sns, create subscirption and activate it.( by email)
+
+Create Memory and Disk utilisation alaram for EC2 instance:
+
+
+
