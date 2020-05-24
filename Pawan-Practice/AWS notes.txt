@@ -62,7 +62,12 @@ Life cycle : move to different buckets
  Through end point we can give access to entire bucket
  (To connect s3 buckets to connect to VPC)
  
-Replication
+Replication:
+
+
+S3 Glacier:Archive Your data- Create valuts( using third party tool- fast glacier -free download)not directly through console
+
+EFS:unix file system-share folder(nfs)
 
  
  
