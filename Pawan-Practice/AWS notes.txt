@@ -47,6 +47,23 @@ we will implement NAT GW
 https://www.youtube.com/watch?v=P6HHJFAymN4
 https://www.youtube.com/watch?v=krpzxDAlOdA
 
+DAY 19: S3 part 2
+--------------------------
+
+Life cycle : move to different buckets
+ 
+ s3api:
+ awss3cp:
+ awssync 
+ s3sync
+ s3copy
+ 
+ ACCESSPOINTS: To give access to only particular bucket- folder
+ Through end point we can give access to entire bucket
+ (To connect s3 buckets to connect to VPC)
+ 
+Replication
+
  
  
  DAY 22  RDS:
