@@ -80,6 +80,25 @@ EFS:unix file system-share folder(nfs)
  
  Eg: Host Storage gateway on EC2 instance
  
+ steps 
+ 1.Create S3 bucket
+ 2.Deploy Ec2 ( ALinux)
+3.Deploye storagegateway(Filegateway)Select Ec2 m4.xlarge( add stogare 5GB) (SG-mediator)
+   -Create a file share      ( if you want you can 5GB volume )
+4.login to server 
+
+mkdir /sgwmount
+copy mount path from SG-file sahre -On Linuc( eg: moiunt -t -nfs -o nolock,ard....moountpath)
+df-h
+
+AWS Backup-Latestthing
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  DAY 22  RDS:
  
