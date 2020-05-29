@@ -69,6 +69,16 @@ S3 Glacier:Archive Your data- Create valuts( using third party tool- fast glacie
 
 EFS:unix file system-share folder(nfs)
 
+ DAY20:
+ --------
+ AWS Storage Gateway: To store data from onpremise to cloud:
+ Egs: Move data from onprem to S3,Drives to AWS as AMIs,Takebackup to S3
+ 
+ File Gateway
+ Volume Gateway
+ Tape Gateway
+ 
+ Eg: Host Storage gateway on EC2 instance
  
  
  DAY 22  RDS:
