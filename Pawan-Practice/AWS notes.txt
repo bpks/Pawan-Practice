@@ -84,20 +84,45 @@ EFS:unix file system-share folder(nfs)
  1.Create S3 bucket
  2.Deploy Ec2 ( ALinux)
 3.Deploye storagegateway(Filegateway)Select Ec2 m4.xlarge( add stogare 5GB) (SG-mediator)
-   -Create a file share      ( if you want you can 5GB volume )
+   -Create a file share (NFS - for linux, SMB-server messaging block for windows)     ( if you want you can 5GB volume )
 4.login to server 
 
 mkdir /sgwmount
 copy mount path from SG-file sahre -On Linuc( eg: moiunt -t -nfs -o nolock,ard....moountpath)
-df-h
+sgwmount
+df -h ( see the driver mount)
+lets put data for every 30 sec
+cd sgwmount
+I=0
+while [True]
+do
+echo $(date) > file$I
+sleep 10
+I=$(($I+1))
+done
 
-AWS Backup-Latestthing
+duplicat session:
+ls -al /sgwmount/ ----> to watch the file loading for every 2 seconds
+
+rm -f file* 
+ll
+
+all files will be deleted-- in StorageGateway also
+
+df
+
+
+5.Stop gateway
+
+
+ 
+ Interview solution for storgaefrom on prem to cloud(EFS,SNOWBALL,AWS Storgae GW using VPN)
  
  
- 
- 
- 
- 
+ AWS Backup-Latest thing
+ Using tags:
+ -->Create Backup Vault
+ -->
  
  
  DAY 22  RDS:
