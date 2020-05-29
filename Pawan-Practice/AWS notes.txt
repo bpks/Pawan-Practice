@@ -124,6 +124,9 @@ df
  -->Create Backup Vault
  -->Create Backup Plan-> build new plan-Prod app servers
  
+ DAY 21:
+ -------
+ 
  
  
  DAY 22  RDS:
