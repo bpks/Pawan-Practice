@@ -119,10 +119,11 @@ df
  Interview solution for storgaefrom on prem to cloud(EFS,SNOWBALL,AWS Storgae GW using VPN)
  
  
- AWS Backup-Latest thing
+ 1.AWS Backup-Latest thing
  Using tags:
  -->Create Backup Vault
- -->
+ -->Create Backup Plan-> build new plan-Prod app servers
+ 
  
  
  DAY 22  RDS:
