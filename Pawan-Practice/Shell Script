@@ -1,1 +1,21 @@
 aws- ec2 describe-instances | grep -i "InstanceId" | cut -d ":" -f 2
+
+"InstanceId":"i-02342423423423af",
+"InstanceId":"i-02342423423423af",
+
+aws- ec2 describe-instances | grep -i "InstanceId" | cut -d ":" -f 2 | tr -d '"' | tr-d ','
+
+output:  i-02342423423423af
+         i-02342423423423af
+         
+         INST=$(aws- ec2 describe-instances | grep -i "InstanceId" | cut -d ":" -f 2 | tr -d '"' | tr-d ',')
+         
+         
+         Create 5 buckets:
+         
+         aws s3 create bucket: from google
+         aws s3 delete bucket: from google
+         
+          I=10
+          while [$I -lt6]
+         
