@@ -1,3 +1,5 @@
+Variables:
+
 1.aws- ec2 describe-instances | grep -i "InstanceId" | cut -d ":" -f 2
 
 "InstanceId":"i-02342423423423af",
@@ -54,3 +56,44 @@ printenv
 
 echo $SECRET
 1234
+
+
+Flow Controls:
+
+[]
+{} -> when creating finctions
+
+A=10
+B=10
+if [ $A -gt $B ] (space required)
+then
+echo "Is true"
+else
+echo "Is false"
+fi
+
+
+===========
+
+#!/bin/bash
+read -p( prompt)
+
+read -p "Enter value of A:" A
+read -p "Enter value of B:" B
+if [ $A -lt $B ]
+then
+echo "$A is less than $B"
+elif [ $A -eq $B ]
+then 
+echo "$A is equal to $B"
+else
+echo "$A is greater than $B"
+fi
+
+------------ while condition------ to reperat the promt..
+I-1
+while []
+do
+echo "welcome to devops class"
+do
+sleep 1
