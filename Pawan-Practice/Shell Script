@@ -1,9 +1,9 @@
-aws- ec2 describe-instances | grep -i "InstanceId" | cut -d ":" -f 2
+1.aws- ec2 describe-instances | grep -i "InstanceId" | cut -d ":" -f 2
 
 "InstanceId":"i-02342423423423af",
 "InstanceId":"i-02342423423423af",
 
-aws- ec2 describe-instances | grep -i "InstanceId" | cut -d ":" -f 2 | tr -d '"' | tr-d ','
+2.aws- ec2 describe-instances | grep -i "InstanceId" | cut -d ":" -f 2 | tr -d '"' | tr-d ','
 
 output:  i-02342423423423af
          i-02342423423423af
@@ -11,7 +11,7 @@ output:  i-02342423423423af
          INST=$(aws- ec2 describe-instances | grep -i "InstanceId" | cut -d ":" -f 2 | tr -d '"' | tr-d ',')
          
          
-         Create 5 buckets:
+  3.       Create 5 buckets:
          
          aws s3 create bucket: from google
          aws s3 delete bucket: from google
@@ -19,3 +19,38 @@ output:  i-02342423423423af
           I=10
           while [$I -lt6]
          
+4. echo $PATH
+
+5.ping wwww.google.com
+
+which ping
+which terraform
+
+wget url
+unzip terrform
+
+mv terraform /tmp.  ( moved terraform to tmp location)
+rm -f terraform.zip   ( Removed terraform zip folder) rm -rf ( folder withing folder will be deleted)
+
+type terraform 
+command not found
+which packer
+
+so in that case do
+echo $PATH
+it will show all paths 
+now cp/tmp/terraform /user/local/games/terraform
+
+now do
+which packer
+
+
+EXPORTS:
+
+export ACCESS="ABCD"
+export SECRET="1234"
+
+printenv
+
+echo $SECRET
+1234
