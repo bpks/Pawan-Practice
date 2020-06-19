@@ -90,13 +90,14 @@ else
 echo "$A is greater than $B"
 fi
 
------------- while condition------ to reperat the promt..
-I-1
-while []
+------------ while condition-false ayyevaraku run avutadi..----- to reperat the promt..<---Shift + option + F --For indentation>
+I=1
+while [ $I -lt 11 ]
 do
-echo "welcome to devops class"
-do
+echo "Welcome to devops training day $I"
+I=$(( $I + 1 ))
 sleep 1
+done
 
 
 -------for -----
