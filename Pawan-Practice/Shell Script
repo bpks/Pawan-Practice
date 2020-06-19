@@ -103,5 +103,10 @@ done
 -------for -----
 for I in {1..10}
 do
-echo "Welcome to devops training $I"
+echo "Welcome to devops $I"
+sleep 1
 done
+
+---------cp hello.sh hello1.sh----
+---------nano hello1.sh--------
+---------ctrl + L---- clear screen
