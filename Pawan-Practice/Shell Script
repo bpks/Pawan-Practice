@@ -110,3 +110,34 @@ done
 ---------cp hello.sh hello1.sh----
 ---------nano hello1.sh--------
 ---------ctrl + L---- clear screen
+
+---- aws configure----
+
+aws configure
+access key:
+secrecrest access:
+region_ aws-east1
+format:json
+
+
+(copied from: https://docs.aws.amazon.com/cli/latest/reference/s3api/create-bucket.html)
+
+----Create S3 bucktes using script----
+
+for region in $(cat regions)
+do
+aws s3api create-bucket --bucket devopsclass-${region} --region $region
+done
+
+
+----Delete S3 bucktes using script----
+
+for region in $(cat regions)
+do
+aws s3api rb s3:// devopsclass-${region} --force
+sleep2
+done
+
+-----------Shell commands-----
+set - x - e ( stop at error code)
+echo $? ---> it will show exit codes..
