@@ -138,6 +138,18 @@ aws s3api rb s3:// devopsclass-${region} --force
 sleep2
 done
 
------------Shell commands-----
+-----------Shell commands Debugging-----
 set - x - e ( stop at error code)
-echo $? ---> it will show exit codes..
+echo $? ---> it will show shell exit codes..
+
+#!/bin/bash
+set -x
+read -p " enter command" COMM
+$COMM
+if [ $? -eq 0 ]
+then
+echo "you have entered a right command"
+else
+echo"command not found"
+fi
+
