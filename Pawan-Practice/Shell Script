@@ -153,3 +153,17 @@ else
 echo"command not found"
 fi
 
+-------- Even or Odd _--------eq = equal-- ne = noteuqal---
+
+#!/bin/bash
+for I in {2..100}; do
+    if [ $(expr $I % 2) -eq 0 ] ; then
+        echo "$I is even number"
+        
+    else
+        echo "$I is odd number"
+    fi
+done
+
+
+-------------- -n non zero----
